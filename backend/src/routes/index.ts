@@ -1,14 +1,9 @@
 import { Router } from 'express';
-import { authRouter } from './auth';
-import { taskRouter } from './task';
+import { taskRouter } from './todo';
 
 const router = Router();
 
-/** GET /health-check - Check service health */
-router.get('/health-check', (req, res) => res.send('OK'));
-
-router.use('/auth', authRouter);
-router.use('/task', taskRouter);
+router.use('/', taskRouter);
 
 // Validating all the APIs with jwt token.
 // router.use(
@@ -30,11 +25,5 @@ router.use('/task', taskRouter);
 //     },
 //   })
 // );
-
-// // mount user routes at /users
-// router.use('/users', userRoutes);
-
-// // mount book routes at /books
-// router.use('/books', bookRoutes);
 
 export default router;
