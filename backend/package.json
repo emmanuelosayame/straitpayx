@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "backend",
   "scripts": {
-    "build": "cross-env npx tsc",
+    "build": "npx tsc",
     "start": "node dist/app.js",
     "dev": "cross-env nodemon index.ts"
   },
