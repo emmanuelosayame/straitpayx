@@ -26,4 +26,4 @@
 backend/.env
 *backend/.env
 
-/backend/api
+# /backend/api
