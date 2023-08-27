@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api', routes);
 
-app.listen(port, () => {
+app.listen(port || 8000, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });
 
