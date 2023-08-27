@@ -26,3 +26,5 @@ app.listen(port || 8000, () => {
 });
 
 startMongoose();
+
+module.exports = app;

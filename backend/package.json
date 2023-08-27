@@ -5,7 +5,7 @@
   "scripts": {
     "build": "cross-env npx tsc",
     "start": "node dist/app.js",
-    "dev": "cross-env nodemon server.ts"
+    "dev": "cross-env nodemon index.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

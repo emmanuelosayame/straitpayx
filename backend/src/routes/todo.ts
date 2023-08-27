@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import { customAlphabet } from 'nanoid';
 import { validateBody } from '../middleware';
-import { taskS } from '../../lib/z_schema';
 import { z } from 'zod';
 import { todoModel } from '../../db/schema';
+import { taskS } from '../../lib/z_schema';
 const router = Router();
 
 const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz123456789');
@@ -11,6 +11,8 @@ const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz123456789');
 router.get('/todos', async (req, res) => {
   try {
     const tasks = await todoModel.find({});
+    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
     res.status(200).json(tasks);
   } catch (err) {
     res.status(500).json(err as Error);
