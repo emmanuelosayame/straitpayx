@@ -2,8 +2,8 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 // import cors from 'cors';
-import routes from './routes';
-import { startMongoose } from './../db/connect';
+import routes from './src/routes';
+import { startMongoose } from './db/connect';
 
 dotenv.config();
 
